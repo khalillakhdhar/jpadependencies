@@ -4,6 +4,7 @@ import com.elitech.model.BaseEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,4 +18,6 @@ public class Commandes extends BaseEntity{
 @Column(columnDefinition = "varchar(30) default 'attente'")
 private String etat;
 private int quantite;
+@ManyToOne(optional = false)
+private Utilisateur utilisateur;
 }
